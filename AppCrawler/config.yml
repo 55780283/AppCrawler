@@ -1,0 +1,125 @@
+# 插件列表
+#pluginList: [
+#  "com.testerhome.appcrawler.plugin.LogPlugin",
+#  "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+#]
+# 是否截图
+saveScreen: true
+reportTitle: "UiCrawlerTestReport"
+# 结果目录
+resultDir: "/Users/liumingwei/Crawler"
+# 在执行操作后等待多少毫秒刷新
+waitLoading: 500
+waitLaunch: 6000
+# 结果报告是否展示没有遍历被取消的控件
+showCancel: true
+# 最大运行时间
+maxTime: 10800
+# 默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
+maxDepth: 1
+
+# appium的capability通用配置
+capability:
+  # Appium是否需要自动安装和启动应用。默认值true
+  autoLaunch: "true"
+  # 直接转换到 WebView 上下文。 默认值 false
+  autoWebview: "false"
+  # 不要在会话前重置应用状态。默认值false。
+  noReset: "true"
+  fullReset: "false"
+  # dontStopAppOnReset: true
+  automationName: "uiautomator2"
+  #以下为重置手机输入法为 appium 输入法
+  unicodeKeyboard: true
+  resetKeyboard: true
+  # Android
+  appium: "http://0.0.0.0:4723/wd/hub"
+  deviceName: "ce071717d999471e057e"
+  appPackage: "com.xes.jazhanghui.activity"
+  appActivity: ".mvp.start.StartActivity"
+  platformName: "Android"
+  # iOS
+#  deviceName: "iPhone 6 Plus"
+#  bundleId: "com.sinacp.ggaicai"
+#  platformVersion: "9.3"
+#  appium: "http://127.0.0.1:4730/wd/hub"
+
+## android专属配置 最后会和capability合并
+#androidCapability:
+#  deviceName: "ce071717d999471e057e"
+#  appPackage: "com.xes.jazhanghui.activity"
+#  appActivity: ".mvp.start.StartActivity"
+#  # 你想使用的自动化测试引擎 可以是 uiautomator2  macaca 等 默认appium
+#  automationName: "uiautomator2"
+#  appium: "http://0.0.0.1:4730/wd/hub"
+#  fullReset: false
+#  noReset: true
+#  reuse: 3
+#  #以下为重置手机输入法为appium输入法
+#  unicodeKeyboard: true
+#  resetKeyboard: true
+## ios 专属配置 最后会和capability合并
+#iosCapability:
+#  deviceName: "iPhone 6 Plus"
+#  bundleId: "com.sinacp.ggaicai"
+#  screenshotWaitTimeout: "10"
+#  platformVersion: "9.3"
+#  autoAcceptAlerts: "true"
+#  appium: "http://127.0.0.1:4730/wd/hub"
+
+
+
+# 黑名单列表  匹配风格, 默认排除内容是2个数字以上的控件
+blackList:
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
+  action: null
+  actions: []
+  times: 0
+
+# 测试用例
+testcase:
+  name: "demo1"
+  steps:
+  - given: []
+    when: null
+    then: []
+    xpath: "/*"
+    action: "Thread.sleep(5000)"
+    actions: []
+    times: 0
+
+
+triggerActions:
+# 去开启
+- action: "click"
+  xpath: "//android.widget.TextView[@text='去开启']"
+  times: 1
+# 权限允许
+- action: "click"
+  xpath: "//*[contains(@resource-id,'permission_allow_button')]"
+  times: 1
+# 系统个性化 确定
+- action: "click"
+  xpath: "//*[contains(@resource-id,'button1')]"
+  times: 1
+# 协议 同意
+- action: "click"
+  xpath: "//android.widget.TextView[@text='同意']"
+  times: 1
+# 登录流程
+- action: "click"
+  xpath: "//android.widget.TextView[@text='密码登录']"
+  times: 1
+- action: "15011162592"
+  xpath: "//*[contains(@resource-id,'xes_login_username')]"
+  times: 1
+- action: "123456Qaz"
+  xpath: "//*[contains(@resource-id,'xes_login_password')]"
+  times: 1
+- action: "click"
+  xpath: "//*[contains(@resource-id,'xes_login_button')]"
+  times: 1
+

@@ -1,0 +1,79 @@
+# 插件列表
+pluginList: [
+  "com.testerhome.appcrawler.plugin.LogPlugin",
+  "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+]
+# 是否截图
+saveScreen: true
+reportTitle: "UiCrawlerTestReport"
+# 结果目录  /Users/liumingwei/Crawler
+resultDir: ""
+# 在执行操作后等待多少毫秒刷新
+waitLoading: 500
+waitLaunch: 6000
+# 结果报告是否展示没有遍历被取消的控件
+showCancel: true
+# 最大运行时间
+maxTime: 10800
+# 默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
+maxDepth: 10
+# appium的capability通用配置
+capability:
+  # Appium是否需要自动安装和启动应用。默认值true
+  autoLaunch: "true"
+  # 直接转换到 WebView 上下文。 默认值 false
+  autoWebview: "false"
+  # 不要在会话前重置应用状态。默认值false。
+  noReset: "true"
+  fullReset: "false"
+  appium: "http://0.0.0.0:4723/wd/hub"
+  deviceName: "ce071717d999471e057e"
+  appPackage: "com.xes.jazhanghui.activity"
+  appActivity: ".mvp.start.StartActivity"
+  # dontStopAppOnReset: true
+  automationName: "uiautomator2"
+  platformName: "Android"
+  #以下为重置手机输入法为 appium 输入法
+  unicodeKeyboard: true
+  resetKeyboard: true
+
+blackList:
+
+  - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
+    action: null
+    actions: []
+    times: 0
+
+  # 过滤报错控件
+  - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
+    action: null
+    actions: []
+    times: 0
+
+  # 屏蔽 分享 防止跳出应用
+  - xpath: "//*[contains(@resource-id,'menu_share')]"
+    action: null
+    times: 0
+
+  # ------------ 防止跳出选课页面 -----------
+  - xpath: "//*[contains(@resource-id,'id/bottomBar')]"
+    action: null
+    actions: []
+    times: 0
+  - xpath: "//*[contains(@resource-id,'id/img_bottom_bar')]"
+    action: null
+    actions: []
+    times: 0
+  - xpath: "//*[contains(@text,'我的')]"
+    action: null
+    actions: []
+    times: 0
+  - xpath: "//*[contains(@text,'发现')]"
+    action: null
+    actions: []
+    times: 0
+  - xpath: "//*[contains(@text,'课堂')]"
+    action: null
+    actions: []
+    times: 0
+  # ------------ 防止跳出选课页面 -----------

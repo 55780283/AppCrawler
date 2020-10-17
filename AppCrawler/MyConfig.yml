@@ -5,7 +5,7 @@ pluginList: [
 ]
 # 是否截图
 saveScreen: true
-reportTitle: "UiCrawlerTestReport"
+reportTitle: "我的页-UI遍历测试报告"
 # 结果目录
 resultDir: "/Users/liumingwei/Crawler"
 # 在执行操作后等待多少毫秒刷新
@@ -43,17 +43,18 @@ selectedList:
   - xpath: "//*[@clickable='true']"
   - xpath: "//android.widget.TextView[@text='我的']"
 
-## 优先被遍历
+# 优先被遍历
 firstList:
   - xpath: "//android.widget.TextView[@text='我的']"
 
 # 黑名单列表  匹配风格, 默认排除内容是2个数字以上的控件
 blackList:
 
-# 过滤报错控件
+  # 屏蔽 报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
     times: 0
+
   # 屏蔽 导航 防止跳出应用
   - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
     action: null
@@ -79,6 +80,12 @@ blackList:
     action: null
     times: 0
 
+  # 关闭应用
+  - xpath: "//*[contains(@resource-id,'aerr_close')]"
+    action: click
+    times: 0
+
+# 制定规则（action、xpath、times）
 triggerActions:
   # 去开启
   - action: "click"

@@ -5,7 +5,7 @@ pluginList: [
 ]
 # 是否截图
 saveScreen: true
-reportTitle: "UiCrawlerTestReport"
+reportTitle: "选课页-UI遍历测试报告"
 # 结果目录  /Users/liumingwei/Crawler
 resultDir: ""
 # 在执行操作后等待多少毫秒刷新
@@ -20,9 +20,9 @@ maxDepth: 10
 # appium的capability通用配置
 capability:
   # Appium是否需要自动安装和启动应用。默认值true
-  autoLaunch: "true"
+  autoLaunch: true
   # 直接转换到 WebView 上下文。 默认值 false
-  autoWebview: "false"
+  autoWebview: false
   # 不要在会话前重置应用状态。默认值false。
   noReset: "true"
   fullReset: "false"
@@ -43,14 +43,19 @@ sortByAttribute:
   - "list"
   - "selected"
 
-blackList:
+## 最后遍历的元素
+#lastList:
+#  - action: driver.swipe(0.5, 0.8, 0.5, 0.2)
+#    times: 3
 
+# 排除某些控件
+blackList:
   - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
     action: null
     actions: []
     times: 0
 
-  # 过滤报错控件
+  # 屏蔽报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
     actions: []
@@ -64,6 +69,16 @@ blackList:
   # 屏蔽 呼叫 防止跳出应用
   - xpath: "//*[contains(@text,'呼叫')]"
     action: null
+    times: 0
+
+  - xpath: "//*[contains(@text,'相册')]"
+    action: null
+    actions: []
+    times: 0
+
+  - xpath: "//*[contains(@text,'相机')]"
+    action: null
+    actions: []
     times: 0
 
   # ------------ 防止跳出选课页面 -----------
@@ -89,6 +104,7 @@ blackList:
     times: 0
   # ------------ 防止跳出选课页面 -----------
 
+# 制定规则（action、xpath、times）
 triggerActions:
   # 去开启
   - action: "click"

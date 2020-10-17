@@ -5,7 +5,7 @@ pluginList: [
 ]
 # 是否截图
 saveScreen: true
-reportTitle: "课堂-UI遍历"
+reportTitle: "课堂页-UI遍历测试报告"
 # 结果目录
 resultDir: "/Users/liumingwei/Crawler"
 # 在执行操作后等待多少毫秒刷新
@@ -38,7 +38,7 @@ capability:
   unicodeKeyboard: true
   resetKeyboard: true
 
-# 遍历范围设定
+# 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
   - xpath: "//*[@clickable='true']"
   - xpath: "//android.widget.TextView[@text='课堂']"
@@ -49,11 +49,16 @@ firstList:
   - xpath: "//android.widget.TextView[@text='课堂']"
     action: "click"
 
+# 最后遍历的元素
+lastList:
+  - action: driver.swipe(0.5, 0.8, 0.5, 0.2)
+    times: 3
+
 # url黑名单，用户排除某些页面
 urlBlackList:
   - "//android.widget.TextView[@text='发现']"
 
-# 黑名单列表  匹配风格, 默认排除内容是2个数字以上的控件
+# 排除某些控件，黑名单列表 匹配风格, 默认排除内容是2个数字以上的控件
 blackList:
   - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
     action: null
@@ -64,6 +69,12 @@ blackList:
     actions: []
     times: 0
   - xpath: "//*[contains(@text,'选课')]"
+    action: null
+    actions: []
+    times: 0
+
+  # 屏蔽报错控件
+  - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
     actions: []
     times: 0
@@ -83,13 +94,7 @@ blackList:
     times: 0
   # ------------ 防止跳出课堂页面 -----------
 
-
-# 最后应该遍历的元素特征
-#lastList:
-#  - xpath: "//*[contains(@resource-id,'rv_study')]"
-#    action: driver.swipe(0.5, 0.8, 0.5, 0.2)
-#    times: 0
-
+#  制定规则（action、xpath、times）
 triggerActions:
   # 去开启
   - action: "click"
@@ -135,12 +140,12 @@ triggerActions:
     xpath: "//*[contains(@resource-id,'xes_login_button')]"
     times: 1
 
- # 关闭趣味电台
+  # 关闭趣味电台
   - action: "click"
     xpath: "//*[contains(@resource-id,'iv_player_close')]"
     times: 0
 
- # 关闭任务答题弹款
+  # 关闭任务答题弹款
   - action: "click"
     xpath: "//*[contains(@resource-id,'iv_dialog_icon_center_close')]"
     times: 0

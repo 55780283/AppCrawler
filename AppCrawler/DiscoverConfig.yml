@@ -5,7 +5,7 @@ pluginList: [
 ]
 # 是否截图
 saveScreen: true
-reportTitle: "发现页遍历测试报告"
+reportTitle: "发现页-UI遍历测试报告"
 # 结果目录
 resultDir: "/Users/liumingwei/Crawler"
 # 在执行操作后等待多少毫秒刷新
@@ -16,7 +16,7 @@ showCancel: true
 # 最大运行时间
 maxTime: 10800
 # 默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
-maxDepth: 3
+maxDepth: 10
 
 # appium的capability通用配置
 capability:
@@ -38,7 +38,7 @@ capability:
   unicodeKeyboard: true
   resetKeyboard: true
 
-# 遍历范围设定
+# 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
   - xpath: "//android.widget.TextView[@text='发现']"
   - xpath: "//*[@clickable='true']"
@@ -76,12 +76,17 @@ blackList:
     action: null
     actions: []
     times: 0
-    # 过滤报错控件
+  # 屏蔽报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
     actions: []
     times: 0
+  # 关闭应用
+  - xpath: "//*[contains(@resource-id,'aerr_close')]"
+    action: click
+    times: 0
 
+# 制定规则（action、xpath、times）
 triggerActions:
   # 去开启
   - action: "click"

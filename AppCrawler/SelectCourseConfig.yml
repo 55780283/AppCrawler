@@ -37,6 +37,12 @@ capability:
   unicodeKeyboard: true
   resetKeyboard: true
 
+# 先按照深度depth排序，再按照list排序，最后按照selected排序。后排序是优先级别最高的
+sortByAttribute:
+  - "depth"
+  - "list"
+  - "selected"
+
 blackList:
 
   - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
@@ -52,6 +58,11 @@ blackList:
 
   # 屏蔽 分享 防止跳出应用
   - xpath: "//*[contains(@resource-id,'menu_share')]"
+    action: null
+    times: 0
+
+  # 屏蔽 呼叫 防止跳出应用
+  - xpath: "//*[contains(@text,'呼叫')]"
     action: null
     times: 0
 
@@ -77,3 +88,58 @@ blackList:
     actions: []
     times: 0
   # ------------ 防止跳出选课页面 -----------
+
+triggerActions:
+  # 去开启
+  - action: "click"
+    xpath: "//android.widget.TextView[@text='去开启']"
+    times: 0
+
+  # 权限允许
+  - action: "click"
+    xpath: "//*[contains(@resource-id,'permission_allow_button')]"
+    times: 0
+
+  # 三星手机系统个性化 确定
+  - action: "click"
+    xpath: "//*[contains(@resource-id,'button1')]"
+    times: 0
+
+  # 协议 同意
+  - action: "click"
+    xpath: "//android.widget.TextView[@text='同意']"
+    times: 0
+
+  # 关闭趣味电台
+  - action: "click"
+    xpath: "//*[contains(@resource-id,'iv_player_close')]"
+    times: 0
+
+  # 相机&相册 取消
+  - action: "click"
+    xpath: "//*[contains(@resource-id,'xes_cancel')]"
+    times: 0
+
+  # 相机&相册 取消
+  - xpath: "//*[contains(@resource-id,'tv_cancle_media_action')]"
+    action: click
+    times: 0
+
+  # 关闭应用
+  - xpath: "//*[contains(@resource-id,'aerr_close')]"
+    action: click
+    times: 0
+
+  # 登录流程
+  - action: "click"
+    xpath: "//android.widget.TextView[@text='密码登录']"
+    times: 1
+  - action: "15011162592"
+    xpath: "//*[contains(@resource-id,'xes_login_username')]"
+    times: 1
+  - action: "123456Qaz"
+    xpath: "//*[contains(@resource-id,'xes_login_password')]"
+    times: 1
+  - action: "click"
+    xpath: "//*[contains(@resource-id,'xes_login_button')]"
+    times: 1

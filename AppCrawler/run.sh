@@ -10,6 +10,6 @@ startAppium(){
     appium --session-override  -p  4723 &
 }
 
-runAppCrawler(){
-    java -jar appcrawler-2.4.0.jar -c MyConfig.yml
-}
+#runAppCrawler(){
+#    java -jar appcrawler-2.4.0.jar -c MyConfig.yml
+#}

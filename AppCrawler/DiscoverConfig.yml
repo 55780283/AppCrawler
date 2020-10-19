@@ -7,7 +7,7 @@ pluginList: [
 saveScreen: true
 reportTitle: "发现页-UI遍历测试报告"
 # 结果目录
-resultDir: "/Users/liumingwei/Crawler"
+resultDir: "/Users/test/jenkins/workspace/Xes-Discover-UiAppCrawler/log"
 # 在执行操作后等待多少毫秒刷新
 waitLoading: 500
 waitLaunch: 6000

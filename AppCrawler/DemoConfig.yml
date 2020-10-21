@@ -1,16 +1,13 @@
 # 插件列表
-pluginList: [
-  "com.testerhome.appcrawler.plugin.LogPlugin",
-  "com.testerhome.appcrawler.plugin.TagLimitPlugin"
-]
+#pluginList: [
+#  "com.testerhome.appcrawler.plugin.LogPlugin",
+#  "com.testerhome.appcrawler.plugin.TagLimitPlugin"
+#]
 # 是否截图
 saveScreen: true
-#日志级别
-logLevel: "TRACE"
-#报告名称
-reportTitle: "发现页-UI遍历测试报告"
+reportTitle: "UiCrawlerTestReport"
 # 结果目录
-resultDir: "/Users/test/jenkins/workspace/Xes-My-UiAppCrawler/log"
+resultDir: ""
 # 在执行操作后等待多少毫秒刷新
 waitLoading: 500
 waitLaunch: 6000
@@ -19,27 +16,28 @@ showCancel: true
 # 最大运行时间
 maxTime: 10800
 # 默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
-maxDepth: 10
+maxDepth: 2
 
 # appium的capability通用配置
 capability:
   # Appium是否需要自动安装和启动应用。默认值true
-  autoLaunch: true
+  autoLaunch: "true"
   # 直接转换到 WebView 上下文。 默认值 false
-  autoWebview: false
+  autoWebview: "false"
   # 不要在会话前重置应用状态。默认值false。
-  noReset: true
-  fullReset: false
-  appium: "http://0.0.0.0:4723/wd/hub"
-  deviceName: "RKPBDUH6596LCUFI"
-  appPackage: "com.xes.jazhanghui.activity"
-  appActivity: ".mvp.start.StartActivity"
+  noReset: "true"
+  fullReset: "false"
   # dontStopAppOnReset: true
   automationName: "uiautomator2"
-  platformName: "Android"
-  #以下为重置手机输入法为appium输入法
+  #以下为重置手机输入法为 appium 输入法
   unicodeKeyboard: true
   resetKeyboard: true
+  # Android
+  appium: "http://0.0.0.0:4723/wd/hub"
+  deviceName: "ce071717d999471e057e"
+  appPackage: "com.xes.jazhanghui.activity"
+  appActivity: ".mvp.start.StartActivity"
+  platformName: "Android"
 
 # 测试用例
 testcase:
@@ -48,6 +46,12 @@ testcase:
   - xpath: "//android.widget.TextView[@text='发现']"
     action: "click"
     times: 0
+#  - xpath: "//android.widget.TextView[@text='我的']"
+#    action: "click"
+#    times: 0
+#  - xpath: "//android.widget.TextView[@text='课堂']"
+#    action: "click"
+#    times: 0
 
 # 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
@@ -169,7 +173,7 @@ triggerActions:
     xpath: "//*[contains(@resource-id,'iv_player_close')]"
     times: 0
 
- # 登录流程
+  # 登录流程
   - action: "click"
     xpath: "//android.widget.TextView[@text='密码登录']"
     times: 2

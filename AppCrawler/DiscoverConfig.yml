@@ -133,6 +133,10 @@ blackList:
     action: null
     actions: []
     times: 0
+  # 趣味电台
+  - xpath: "//*[contains(@resource-id,'iv_player_close')]"
+    action: null
+    times: 0
   # 屏蔽报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
@@ -166,11 +170,6 @@ triggerActions:
   # 协议 同意
   - action: "click"
     xpath: "//android.widget.TextView[@text='同意']"
-    times: 0
-
-  # 关闭趣味电台
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'iv_player_close')]"
     times: 0
 
  # 登录流程

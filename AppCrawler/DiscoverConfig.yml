@@ -134,9 +134,10 @@ blackList:
     actions: []
     times: 0
   # 趣味电台
-  - xpath: "//*[contains(@resource-id,'iv_player_close')]"
+  - xpath: "//*[contains(@resource-id,'disc_rv_recommend')]"
     action: null
     times: 0
+
   # 屏蔽报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null

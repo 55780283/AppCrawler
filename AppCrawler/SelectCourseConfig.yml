@@ -152,7 +152,7 @@ triggerActions:
   # 登录流程
   - action: "click"
     xpath: "//android.widget.TextView[@text='密码登录']"
-    times: 0
+    times: 1
   - action: "15011162592"
     xpath: "//*[contains(@resource-id,'xes_login_username')]"
     times: 0

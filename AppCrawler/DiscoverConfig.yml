@@ -129,16 +129,20 @@ blackList:
     action: null
     actions: []
     times: 0
+  - xpath: "//*[contains(@text,'题拍拍')]"
+    action: null
+    actions: []
+    times: 0
   # 屏蔽报错控件
   - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
     action: null
     actions: []
     times: 0
 
-  - xpath: "//*[contains(@resource-id,'id/bottomBar')]"
+  - xpath: "//*[contains(@resource-id,'bottomBar')]"
     action: null
     times: 0
-  - xpath: "//*[contains(@resource-id,'id/img_bottom_bar')]"
+  - xpath: "//*[contains(@resource-id,'img_bottom_bar')]"
     action: null
     times: 0
 

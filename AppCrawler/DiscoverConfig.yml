@@ -19,7 +19,7 @@ showCancel: true
 # 最大运行时间
 maxTime: 10800
 # 默认的最大深度10, 结合baseUrl可很好的控制遍历的范围
-maxDepth: 10
+maxDepth: 2
 
 # appium的capability通用配置
 capability:

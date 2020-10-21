@@ -5,6 +5,9 @@ pluginList: [
 ]
 # 是否截图
 saveScreen: true
+#日志级别
+logLevel: "TRACE"
+#报告名称
 reportTitle: "课堂页-UI遍历测试报告"
 # 结果目录
 resultDir: "/Users/test/jenkins/workspace/Xes-ClassRoom-UiAppCrawler/log"
@@ -129,16 +132,16 @@ triggerActions:
   # 登录流程
   - action: "click"
     xpath: "//android.widget.TextView[@text='密码登录']"
-    times: 1
+    times: 0
   - action: "15011162592"
     xpath: "//*[contains(@resource-id,'xes_login_username')]"
-    times: 1
+    times: 0
   - action: "123456Qaz"
     xpath: "//*[contains(@resource-id,'xes_login_password')]"
-    times: 1
+    times: 0
   - action: "click"
     xpath: "//*[contains(@resource-id,'xes_login_button')]"
-    times: 1
+    times: 0
 
   # 关闭趣味电台
   - action: "click"

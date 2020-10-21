@@ -10,7 +10,7 @@ logLevel: "TRACE"
 #报告名称
 reportTitle: "发现页-UI遍历测试报告"
 # 结果目录
-resultDir: "/Users/test/jenkins/workspace/Xes-Discover-UiAppCrawler/log"
+resultDir: ""
 # 在执行操作后等待多少毫秒刷新
 waitLoading: 500
 waitLaunch: 6000
@@ -31,7 +31,7 @@ capability:
   noReset: true
   fullReset: false
   appium: "http://0.0.0.0:4723/wd/hub"
-  deviceName: "ce071717d999471e057e"
+  deviceName: "RKPBDUH6596LCUFI"
   appPackage: "com.xes.jazhanghui.activity"
   appActivity: ".mvp.start.StartActivity"
   # dontStopAppOnReset: true
@@ -43,6 +43,9 @@ capability:
 
 # 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
+  - xpath: "//android.widget.TextView[@text='发现']"
+  - xpath: "//*[@clickable='true']"
+    action: "click"
   - xpath: "//android.widget.TextView[@text='阅读']"
     action: "click"
   - xpath: "//android.widget.TextView[@text='电台']"
@@ -50,9 +53,6 @@ selectedList:
   - xpath: "//android.widget.TextView[@text='视频']"
     action: "click"
   - xpath: "//android.widget.TextView[@text='练习']"
-    action: "click"
-  - xpath: "//android.widget.TextView[@text='发现']"
-  - xpath: "//*[@clickable='true']"
     action: "click"
   - xpath: "//android.widget.TextView[@text='推荐']"
     action: "click"
@@ -84,9 +84,12 @@ blackList:
     action: null
     actions: []
     times: 0
-  # 关闭应用
-  - xpath: "//*[contains(@resource-id,'aerr_close')]"
-    action: click
+
+  - xpath: "//*[contains(@resource-id,'id/bottomBar')]"
+    action: null
+    times: 0
+  - xpath: "//*[contains(@resource-id,'id/img_bottom_bar')]"
+    action: null
     times: 0
 
 # 制定规则（action、xpath、times）
@@ -142,3 +145,7 @@ triggerActions:
   - action: "click"
     xpath: "//*[contains(@resource-id,'practiceBg')]"
     times: 2
+  # 关闭应用
+  - xpath: "//*[contains(@resource-id,'aerr_close')]"
+    action: click
+    times: 0

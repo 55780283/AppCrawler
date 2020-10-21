@@ -10,7 +10,7 @@ logLevel: "TRACE"
 #报告名称
 reportTitle: "课堂页-UI遍历测试报告"
 # 结果目录
-resultDir: "/Users/test/jenkins/workspace/Xes-ClassRoom-UiAppCrawler/log"
+resultDir: ""
 # 在执行操作后等待多少毫秒刷新
 waitLoading: 500
 waitLaunch: 6000
@@ -132,16 +132,16 @@ triggerActions:
   # 登录流程
   - action: "click"
     xpath: "//android.widget.TextView[@text='密码登录']"
-    times: 1
+    times: 2
   - action: "15011162592"
     xpath: "//*[contains(@resource-id,'xes_login_username')]"
     times: 2
-  - action: "123456Qaz"
+  - action: "1234567Qaz"
     xpath: "//*[contains(@resource-id,'xes_login_password')]"
-    times: 2
+    times: 1
   - action: "click"
     xpath: "//*[contains(@resource-id,'xes_login_button')]"
-    times: 2
+    times: 1
 
   # 关闭趣味电台
   - action: "click"
@@ -151,4 +151,9 @@ triggerActions:
   # 关闭任务答题弹款
   - action: "click"
     xpath: "//*[contains(@resource-id,'iv_dialog_icon_center_close')]"
+    times: 0
+
+  # 关闭应用
+  - xpath: "//*[contains(@resource-id,'aerr_close')]"
+    action: click
     times: 0

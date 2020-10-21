@@ -119,19 +119,19 @@ triggerActions:
     xpath: "//*[contains(@resource-id,'iv_player_close')]"
     times: 0
 
-  # 登录流程
+ # 登录流程
   - action: "click"
     xpath: "//android.widget.TextView[@text='密码登录']"
-    times: 1
+    times: 2
   - action: "15011162592"
     xpath: "//*[contains(@resource-id,'xes_login_username')]"
     times: 2
-  - action: "123456Qaz"
+  - action: "1234567Qaz"
     xpath: "//*[contains(@resource-id,'xes_login_password')]"
-    times: 2
+    times: 1
   - action: "click"
     xpath: "//*[contains(@resource-id,'xes_login_button')]"
-    times: 2
+    times: 1
 
   # 视频-定制点击视频卡片
   - action: "click"

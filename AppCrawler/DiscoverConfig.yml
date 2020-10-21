@@ -41,11 +41,65 @@ capability:
   unicodeKeyboard: true
   resetKeyboard: true
 
+# 测试用例
+testcase:
+  name: "进入发现页"
+  steps:
+  - xpath: "//android.widget.TextView[@text='发现']"
+    action: "click"
+    times: 0
+
 # 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
-  - xpath: "//android.widget.TextView[@text='发现']"
-  - xpath: "//*[@clickable='true']"
-    action: "click"
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[contains(name(), 'Button')]"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[contains(name(), 'Text') and @clickable='true' and string-length(@text)<10]"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[@clickable='true']/*[contains(name(), 'Text') and string-length(@text)<10]"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[contains(name(), 'Image') and @clickable='true']"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[@clickable='true']/*[contains(name(), 'Image')]"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[contains(name(), 'Image') and @name!='']"
+    action: null
+    actions: []
+    times: 0
+  - given: []
+    when: null
+    then: []
+    xpath: "//*[contains(name(), 'Text') and @name!='' and string-length(@label)<10]"
+    action: null
+    actions: []
+    times: 0
   - xpath: "//android.widget.TextView[@text='阅读']"
     action: "click"
   - xpath: "//android.widget.TextView[@text='电台']"
@@ -56,10 +110,6 @@ selectedList:
     action: "click"
   - xpath: "//android.widget.TextView[@text='推荐']"
     action: "click"
-
-## 优先被遍历
-firstList:
-  - xpath: "//android.widget.TextView[@text='发现']"
 
 # 黑名单列表  匹配风格, 默认排除内容是2个数字以上的控件
 blackList:

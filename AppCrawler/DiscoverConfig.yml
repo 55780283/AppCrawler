@@ -133,8 +133,12 @@ blackList:
     action: null
     actions: []
     times: 0
+
   # 趣味电台
-  - xpath: "//*[contains(@resource-id,'disc_rv_recommend')]"
+  - xpath: "//*[contains(@resource-id,'ivRecommend')]"
+    action: null
+    times: 0
+  - xpath: "//*[contains(@resource-id,'audioTv')]"
     action: null
     times: 0
 

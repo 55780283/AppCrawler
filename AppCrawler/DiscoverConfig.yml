@@ -51,159 +51,155 @@ testcase:
 
 # 默认遍历列表，如果不是指定的类型，而是确定控件，会分别点击控件
 selectedList:
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[contains(name(), 'Button')]"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[contains(name(), 'Text') and @clickable='true' and string-length(@text)<10]"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[@clickable='true']/*[contains(name(), 'Text') and string-length(@text)<10]"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[contains(name(), 'Image') and @clickable='true']"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[@clickable='true']/*[contains(name(), 'Image')]"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[contains(name(), 'Image') and @name!='']"
-    action: null
-    actions: []
-    times: 0
-  - given: []
-    when: null
-    then: []
-    xpath: "//*[contains(name(), 'Text') and @name!='' and string-length(@label)<10]"
-    action: null
-    actions: []
-    times: 0
-  - xpath: "//android.widget.TextView[@text='阅读']"
-    action: "click"
-  - xpath: "//android.widget.TextView[@text='电台']"
-    action: "click"
-  - xpath: "//android.widget.TextView[@text='视频']"
-    action: "click"
-  - xpath: "//android.widget.TextView[@text='练习']"
-    action: "click"
-  - xpath: "//android.widget.TextView[@text='推荐']"
-    action: "click"
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(name(), 'Button')]"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(name(), 'Text') and @clickable='true' and string-length(@text)<10]"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[@clickable='true']/*[contains(name(), 'Text') and string-length(@text)<10]"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(name(), 'Image') and @clickable='true']"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[@clickable='true']/*[contains(name(), 'Image')]"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(name(), 'Image') and @name!='']"
+  action: null
+  actions: []
+  times: 0
+- given: []
+  when: null
+  then: []
+  xpath: "//*[contains(name(), 'Text') and @name!='' and string-length(@label)<10]"
+  action: null
+  actions: []
+  times: 0
+- xpath: "//android.widget.TextView[@text='阅读']"
+  action: "click"
+- xpath: "//android.widget.TextView[@text='电台']"
+  action: "click"
+- xpath: "//android.widget.TextView[@text='视频']"
+  action: "click"
+- xpath: "//android.widget.TextView[@text='练习']"
+  action: "click"
+- xpath: "//android.widget.TextView[@text='推荐']"
+  action: "click"
 
 # 黑名单列表  匹配风格, 默认排除内容是2个数字以上的控件
 blackList:
-  - xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
-    action: null
-    actions: []
-    times: 0
-  - xpath: "//*[contains(@text,'我的')]"
-    action: null
-    actions: []
-    times: 0
-  - xpath: "//*[contains(@text,'选课')]"
-    action: null
-    actions: []
-    times: 0
-  - xpath: "//*[contains(@text,'课堂')]"
-    action: null
-    actions: []
-    times: 0
-  - xpath: "//*[contains(@text,'题拍拍')]"
-    action: null
-    actions: []
-    times: 0
+- xpath: "//*[contains(@resource-id,'Custom_InfoWindow_Navigate')]"
+  action: null
+  actions: []
+  times: 0
+- xpath: "//*[contains(@text,'我的')]"
+  action: null
+  actions: []
+  times: 0
+- xpath: "//*[contains(@text,'选课')]"
+  action: null
+  actions: []
+  times: 0
+- xpath: "//*[contains(@text,'课堂')]"
+  action: null
+  actions: []
+  times: 0
+- xpath: "//*[contains(@text,'题拍拍')]"
+  action: null
+  actions: []
+  times: 0
+# 屏蔽报错控件
+- xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
+  action: null
+  actions: []
+  times: 0
 
-  # 趣味电台
-  - xpath: "//*[contains(@resource-id,'ivRecommend')]"
-    action: null
-    times: 0
-  - xpath: "//*[contains(@resource-id,'audioTv')]"
-    action: null
-    times: 0
-
-  # 屏蔽报错控件
-  - xpath: "//*[contains(@class,'android.support.v7.app.ActionBar$Tab')]"
-    action: null
-    actions: []
-    times: 0
-
-  - xpath: "//*[contains(@resource-id,'bottomBar')]"
-    action: null
-    times: 0
-  - xpath: "//*[contains(@resource-id,'img_bottom_bar')]"
-    action: null
-    times: 0
+- xpath: "//*[contains(@resource-id,'bottomBar')]"
+  action: null
+  times: 0
+- xpath: "//*[contains(@resource-id,'img_bottom_bar')]"
+  action: null
+  times: 0
 
 # 制定规则（action、xpath、times）
 triggerActions:
-  # 去开启
-  - action: "click"
-    xpath: "//android.widget.TextView[@text='去开启']"
-    times: 0
+# 去开启
+- action: "click"
+  xpath: "//android.widget.TextView[@text='去开启']"
+  times: 0
 
-  # 权限允许
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'permission_allow_button')]"
-    times: 0
+# 权限允许
+- action: "click"
+  xpath: "//*[contains(@resource-id,'permission_allow_button')]"
+  times: 0
 
-  # 三星手机系统个性化 确定
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'button1')]"
-    times: 0
+# 三星手机系统个性化 确定
+- action: "click"
+  xpath: "//*[contains(@resource-id,'button1')]"
+  times: 0
 
-  # 协议 同意
-  - action: "click"
-    xpath: "//android.widget.TextView[@text='同意']"
-    times: 0
+# 协议 同意
+- action: "click"
+  xpath: "//android.widget.TextView[@text='同意']"
+  times: 0
 
- # 登录流程
-  - action: "click"
-    xpath: "//android.widget.TextView[@text='密码登录']"
-    times: 2
-  - action: "15011162592"
-    xpath: "//*[contains(@resource-id,'xes_login_username')]"
-    times: 2
-  - action: "1234567Qaz"
-    xpath: "//*[contains(@resource-id,'xes_login_password')]"
-    times: 1
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'xes_login_button')]"
-    times: 1
+# 关闭趣味电台
+- action: "click"
+  xpath: "//*[contains(@resource-id,'iv_player_close')]"
+  times: 0
 
-  # 视频-定制点击视频卡片
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'ivMutPlay')]"
-    times: 2
-  # 视频-定制点击金刚位- 知识课堂
-  - action: "click"
-    xpath: "//android.widget.TextView[@text='知识课堂']"
-    times: 1
-  # 练习-定制点击卡片
-  - action: "click"
-    xpath: "//*[contains(@resource-id,'practiceBg')]"
-    times: 2
-  # 关闭应用
-  - xpath: "//*[contains(@resource-id,'aerr_close')]"
-    action: click
-    times: 0
+# 登录流程
+- action: "click"
+  xpath: "//android.widget.TextView[@text='密码登录']"
+  times: 2
+- action: "15011162592"
+  xpath: "//*[contains(@resource-id,'xes_login_username')]"
+  times: 2
+- action: "1234567Qaz"
+  xpath: "//*[contains(@resource-id,'xes_login_password')]"
+  times: 1
+- action: "click"
+  xpath: "//*[contains(@resource-id,'xes_login_button')]"
+  times: 1
+
+# 视频-定制点击视频卡片
+- action: "click"
+  xpath: "//*[contains(@resource-id,'ivMutPlay')]"
+  times: 2
+# 视频-定制点击金刚位- 知识课堂
+- action: "click"
+  xpath: "//android.widget.TextView[@text='知识课堂']"
+  times: 1
+# 练习-定制点击卡片
+- action: "click"
+  xpath: "//*[contains(@resource-id,'practiceBg')]"
+  times: 2
+# 关闭应用
+- xpath: "//*[contains(@resource-id,'aerr_close')]"
+  action: click
+  times: 0

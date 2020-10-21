@@ -141,10 +141,10 @@ triggerActions:
     times: 1
   - action: "15011162592"
     xpath: "//*[contains(@resource-id,'xes_login_username')]"
-    times: 0
+    times: 2
   - action: "123456Qaz"
     xpath: "//*[contains(@resource-id,'xes_login_password')]"
-    times: 0
+    times: 2
   - action: "click"
     xpath: "//*[contains(@resource-id,'xes_login_button')]"
-    times: 0
+    times: 2
